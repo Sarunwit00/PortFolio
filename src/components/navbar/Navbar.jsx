@@ -9,7 +9,7 @@ export default function Navbar() {
         { name: "Projects", link: "#projects" },
     ];
   return (
-    <header className='text-gray-600 body-font z-10'>
+    <header data-aos='fade-up' className='text-gray-600 body-font z-10'>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
         <a className='flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0'>
           <span className='ml-3 text-3xl font-bold text-white'>Portfolio</span>
