@@ -26,7 +26,7 @@ export default function Contact() {
                     </textarea>
                 </div>
 
-                <div className='flex justify-center'>
+                <div className='flex justify-start'>
                   <button type='submit' className='inline-flex text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-lg'>
                       Send Message
                   </button>
