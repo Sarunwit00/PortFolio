@@ -4,8 +4,8 @@ export default function Navbar() {
      const listNavbar = [
         { name: "Home", link: "#home" },
         { name: "Skills", link: "#skills" },
-        { name: "Experience", link: "#experience" },
-        { name: "Language", link: "#language" },
+        // { name: "Experience", link: "#experience" },
+        // { name: "Language", link: "#language" },
         { name: "Projects", link: "#projects" },
     ];
   return (
