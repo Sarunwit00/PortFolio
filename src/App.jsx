@@ -4,6 +4,7 @@ import 'aos/dist/aos.css'
 import Hero from './components/hero/Hero'
 import Skills from './components/skills/Skills'
 import Projects from './components/projects/Projects'
+import Contact from './components/contact/Contact'
 // import Experience from './components/experience/Experience'
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Skills />
       {/* <Experience /> */}
       <Projects />
+      <Contact />
     </main>
   )
 }
