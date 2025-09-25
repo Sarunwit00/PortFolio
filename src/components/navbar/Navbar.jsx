@@ -70,12 +70,6 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-              <a
-                href="#contact"
-                className="ml-4 rounded-full border-2 border-yellow-400/80 px-6 py-3 text-base text-yellow-300 hover:bg-yellow-300 hover:text-[#0b152b] transition"
-              >
-                Contact
-              </a>
             </nav>
           </div>
 
@@ -94,14 +88,6 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="mt-2 inline-block rounded-full border-2 border-yellow-400/80 px-5 py-3 text-base text-yellow-300 hover:bg-yellow-300 hover:text-[#0b152b]"
-              >
-                Contact
-              </a>
             </div>
           )}
         </div>
