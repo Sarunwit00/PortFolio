@@ -5,47 +5,56 @@ import img from '../../assets/img.png'
 
 export default function Hero() {
   return (
-    <div className='relative overflow-hidden min-h-[550px] sm:min-h-[660px] flex flex-col'>
-        <Navbar />
+    <section id="home" className="relative overflow-hidden">
+      <Navbar />
 
-        {/* orange circle removed from page-level and will be placed under the person image (inside image wrapper) */}
+      {/* hero content */}
+      <div className="container mx-auto grid min-h-[92vh] grid-cols-1 items-center gap-10 px-5 pt-36 pb-16 md:grid-cols-2">
+        <div data-aos="fade-up" className="order-2 md:order-1">
+          <h1 className="mb-4 text-4xl font-extrabold leading-tight sm:text-5xl">
+            Hello, I'm{' '}
+            <span className="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent">
+              Sarunwit
+            </span>
+          </h1>
 
-        <section
-        className='text-white body-font z-10'>
-            <div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
-                <div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left
-                mb-16 md:mb-0 items-center text-center relative'>
-                    <h1 className='title-font sm:text-4xl mb-4 font-bold text-white'>HELLO I'm SARUNWIT</h1>
-                    <p className='mb-8 leading-relaxed'>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+          <p className="mb-8 max-w-xl text-white/80">
+            I craft responsive, performant web apps with clean code and delightful interactions. Scroll to see my skills and featured projects.
+          </p>
 
-                    </p>
-                    <div className='flex justify-center'>
-                        <a href={CV} download>
-                            <button className='inline-flex text-white bg-orange-500 border-0 py-2 px-6
-                            focus:outline-none hover:bg-orange-600 hover:shadow-[0_0_40px_rgb(255, 165, 0, 0.7)]
-                            rounded-full text-lg'>
-                                Download CV
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 flex justify-center md:justify-end items-center relative'>
-                    {/* orange circle placed behind and slightly below the photo */}
-                    <div className='absolute right-[-60px] bottom-[-40px] z-0 pointer-events-none hidden md:block'>
-                      <div className='w-[420px] h-[420px] rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 shadow-[0_0_80px_rgba(255,165,0,0.6)]'></div>
-                    </div>
-                    {/* mobile smaller circle */}
-                    <div className='absolute right-[-20px] bottom-[-20px] z-0 pointer-events-none block md:hidden'>
-                      <div className='w-56 h-56 rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 shadow-[0_0_60px_rgba(255,165,0,0.6)]'></div>
-                    </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={CV}
+              download
+              className="rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-white shadow-[0_0_40px_rgba(255,165,0,0.5)] transition hover:bg-orange-600"
+            >
+              Download CV
+            </a>
 
-                    {/* person image sits above the circle */}
-                    <div className='w-80 h-80 rounded-full overflow-hidden border-4 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.6)] relative z-10 bg-gray-900'>
-                      <img src={img} alt="hero" className='w-full h-full object-cover object-top' />
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+            <a
+              href="#projects"
+              className="rounded-full border border-white/15 px-6 py-3 text-sm text-white/90 hover:border-yellow-300 hover:text-yellow-300"
+            >
+              View Projects
+            </a>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" className="order-1 md:order-2 relative flex items-center justify-center">
+          {/* glowing circle behind image */}
+          <div className="absolute right-0 bottom-0 -z-10 hidden md:block">
+            <div className="h-[420px] w-[420px] rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 opacity-90 shadow-[0_0_80px_rgba(255,165,0,0.6)]" />
+          </div>
+
+          <div className="absolute right-6 bottom-6 -z-10 md:hidden">
+            <div className="h-56 w-56 rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 opacity-90 shadow-[0_0_60px_rgba(255,165,0,0.6)]" />
+          </div>
+
+          <div className="relative h-80 w-80 overflow-hidden rounded-full border-4 border-white/10 bg-gray-900 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+            <img src={img} alt="hero" className="h-full w-full object-cover object-top" />
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
