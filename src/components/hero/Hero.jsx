@@ -8,11 +8,7 @@ export default function Hero() {
     <div className='relative overflow-hidden min-h-[550px] sm:min-h-[660px] flex flex-col'>
         <Navbar />
 
-        {/* orange circle background */}
-        <div className='pointer-events-none absolute right-0 -top-12 md:-top-24 z-0'>
-          <div className='hidden md:block w-[540px] h-[540px] rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 shadow-[0_0_80px_rgba(255,165,0,0.6)] transform translate-x-24'></div>
-          <div className='block md:hidden w-72 h-72 rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 shadow-[0_0_60px_rgba(255,165,0,0.6)]'></div>
-        </div>
+        {/* orange circle removed from page-level and will be placed under the person image (inside image wrapper) */}
 
         <section
         className='text-white body-font z-10'>
@@ -33,8 +29,20 @@ export default function Hero() {
                         </a>
                     </div>
                 </div>
-                <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
-                    <img src={img} alt="hero" className='object-cover object-center rounded-bl-full w-80 h-80' />
+                <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6 flex justify-center md:justify-end items-center relative'>
+                    {/* orange circle placed behind and slightly below the photo */}
+                    <div className='absolute right-[-60px] bottom-[-40px] z-0 pointer-events-none hidden md:block'>
+                      <div className='w-[420px] h-[420px] rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 shadow-[0_0_80px_rgba(255,165,0,0.6)]'></div>
+                    </div>
+                    {/* mobile smaller circle */}
+                    <div className='absolute right-[-20px] bottom-[-20px] z-0 pointer-events-none block md:hidden'>
+                      <div className='w-56 h-56 rounded-full bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 shadow-[0_0_60px_rgba(255,165,0,0.6)]'></div>
+                    </div>
+
+                    {/* person image sits above the circle */}
+                    <div className='w-80 h-80 rounded-full overflow-hidden border-4 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.6)] relative z-10 bg-gray-900'>
+                      <img src={img} alt="hero" className='w-full h-full object-cover object-top' />
+                    </div>
                 </div>
             </div>
         </section>
