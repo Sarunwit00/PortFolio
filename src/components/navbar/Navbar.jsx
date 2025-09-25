@@ -39,16 +39,16 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#0b152b]/60 backdrop-blur supports-[backdrop-filter]:bg-[#0b152b]/50">
-          <div className="flex items-center justify-between px-4 py-3 md:px-6">
-            <a href="#home" className="text-2xl font-extrabold tracking-tight text-white">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mt-4 rounded-2xl border border-white/10 bg-[#0b152b]/70 backdrop-blur supports-[backdrop-filter]:bg-[#0b152b]/60">
+          <div className="flex items-center justify-between px-6 py-4 md:px-8 md:py-5 lg:py-6">
+            <a href="#home" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
               Portfolio
             </a>
 
             <button
               onClick={() => setOpen(!open)}
-              className="md:hidden inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-sm text-white/80 hover:text-white"
+              className="md:hidden inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-base text-white/80 hover:text-white"
               aria-expanded={open}
               aria-label="Toggle menu"
             >
@@ -58,21 +58,21 @@ export default function Navbar() {
               </svg>
             </button>
 
-            <nav className="hidden md:flex items-center gap-2">
+            <nav className="hidden md:flex items-center gap-4">
               {links.map((item) => (
                 <a
                   key={item.link}
                   href={item.link}
-                  className={`rounded-full px-4 py-2 text-sm transition hover:text-yellow-300 ${
+                  className={`rounded-full px-5 py-2 text-lg transition-colors duration-150 ${
                     activeHash === item.link ? 'text-yellow-300' : 'text-white/80'
-                  }`}
+                  } hover:text-yellow-300`}
                 >
                   {item.name}
                 </a>
               ))}
               <a
                 href="#contact"
-                className="ml-2 rounded-full border border-yellow-400/70 px-5 py-2 text-sm text-yellow-300 hover:bg-yellow-300 hover:text-[#0b152b]"
+                className="ml-4 rounded-full border-2 border-yellow-400/80 px-6 py-3 text-base text-yellow-300 hover:bg-yellow-300 hover:text-[#0b152b] transition"
               >
                 Contact
               </a>
@@ -81,19 +81,27 @@ export default function Navbar() {
 
           {/* mobile menu */}
           {open && (
-            <div className="md:hidden border-t border-white/10 px-4 py-2">
+            <div className="md:hidden border-t border-white/10 px-4 py-3">
               {links.map((item) => (
                 <a
                   key={item.link}
                   href={item.link}
                   onClick={() => setOpen(false)}
-                  className={`block rounded-lg px-3 py-2 text-sm ${
+                  className={`block rounded-lg px-3 py-3 text-base ${
                     activeHash === item.link ? 'bg-white/10 text-yellow-300' : 'text-white/80 hover:text-yellow-300'
                   }`}
                 >
                   {item.name}
                 </a>
               ))}
+
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-block rounded-full border-2 border-yellow-400/80 px-5 py-3 text-base text-yellow-300 hover:bg-yellow-300 hover:text-[#0b152b]"
+              >
+                Contact
+              </a>
             </div>
           )}
         </div>
