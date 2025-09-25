@@ -1,59 +1,91 @@
-// ...existing code...
-import React, { useState } from 'react'
+import React from 'react'
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
+import { FaLinkedinIn, FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 export default function Contact() {
-  const [sent, setSent] = useState(false)
+  const contacts = [
+    {
+      label: 'Email',
+      value: 'a.sarunwit@gmail.com',
+      href: 'mailto:a.sarunwit@gmail.com',
+      icon: <FiMail className="h-5 w-5 text-yellow-300" />,
+    },
+    {
+      label: 'Phone',
+      value: '+66 990-521-476',
+      href: 'tel:0990521476',
+      icon: <FiPhone className="h-5 w-5 text-yellow-300" />,
+    },
+    {
+      label: 'Location',
+      value: 'Vancouver, BC, Canada',
+      href: null,
+      icon: <FiMapPin className="h-5 w-5 text-yellow-300" />,
+    },
+  ]
 
-  const submit = (e) => {
-    e.preventDefault()
-    // simulate success (replace with your backend later)
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
-  }
+  const socials = [
+    { name: 'LinkedIn',  href: 'https://linkedin.com/',  icon: <FaLinkedinIn className="h-5 w-5" /> },
+    { name: 'Twitter',   href: 'https://twitter.com/',    icon: <FaTwitter className="h-5 w-5" /> },
+    { name: 'GitHub',    href: 'https://github.com/',     icon: <FaGithub className="h-5 w-5" /> },
+    { name: 'Instagram', href: 'https://instagram.com/',  icon: <FaInstagram className="h-5 w-5" /> },
+    { name: 'YouTube',   href: 'https://youtube.com/',    icon: <FaYoutube className="h-5 w-5" /> },
+  ]
 
   return (
-    <section id="contact" className="relative py-24">
-      <div className="container mx-auto max-w-3xl px-5">
-        <h2 className="mb-6 text-center text-3xl font-bold sm:text-4xl">Contact Me</h2>
+    <section id="contact" data-aos="fade-up" data-aos-delay="400" className="relative py-24">
+      <div className="container mx-auto px-5 flex flex-col items-center">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white text-center">
+          Contact Information
+        </h2>
 
-        <form onSubmit={submit} className="space-y-6 rounded-2xl border border-white/10 bg-white/5 p-6 shadow">
-          <div>
-            <label htmlFor="email" className="mb-2 block text-sm font-medium text-white">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              required
-              placeholder="name@gmail.com"
-              className="block w-full rounded-lg border border-white/10 bg-gray-900/50 p-3 text-sm text-white placeholder-white/40 outline-none ring-0 focus:border-yellow-400"
-            />
+        {/* centered card */}
+        <div className="mt-10 w-full max-w-xl">
+          <div className="mx-auto rounded-2xl border border-white/10 bg-white/3 p-6 shadow-lg">
+            {/* contact list centered inside card */}
+            <div className="mx-auto w-full max-w-md">
+              {contacts.map((c) => (
+                <div key={c.label} className="grid grid-cols-[56px_1fr] items-center gap-4 py-3">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
+                    {c.icon}
+                  </div>
+
+                  <div className="text-left">
+                    <div className="text-sm uppercase tracking-wider text-white/60">{c.label}</div>
+                    {c.href ? (
+                      <a href={c.href} className="text-base font-medium text-white transition hover:text-yellow-300">
+                        {c.value}
+                      </a>
+                    ) : (
+                      <div className="text-base font-medium text-white">{c.value}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* socials centered */}
+            <div className="mt-6 text-center">
+              <div className="text-sm uppercase tracking-wider text-white/60">Connect With Me</div>
+              <div className="mt-4 flex items-center justify-center gap-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.name}
+                    className="group inline-flex h-11 w-11 items-center justify-center rounded-full
+                               border border-white/10 bg-white/5 text-white/80 transition
+                               hover:border-yellow-300 hover:text-yellow-300 hover:shadow-[0_0_30px_rgba(255,165,0,0.25)]"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-
-          <div>
-            <label htmlFor="message" className="mb-2 block text-sm font-medium text-white">
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={6}
-              required
-              placeholder="Write your message here..."
-              className="block w-full rounded-lg border border-white/10 bg-gray-900/50 p-3 text-sm text-white placeholder-white/40 outline-none focus:border-yellow-400"
-            ></textarea>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              type="submit"
-              className="rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-white shadow-[0_0_40px_rgba(255,165,0,0.5)] transition hover:bg-orange-600"
-            >
-              Send Message
-            </button>
-
-            {sent && <span className="text-sm text-green-400">Thanks! Your message has been sent (demo).</span>}
-          </div>
-        </form>
+        </div>
       </div>
     </section>
   )
