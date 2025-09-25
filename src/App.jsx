@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Hero from './components/hero/Hero'
+import Skills from './components/skills/Skills'
 
 export default function App() {
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <main className=' bg-[#0d182e]'>
       <Hero />
+      <Skills />
     </main>
   )
 }
