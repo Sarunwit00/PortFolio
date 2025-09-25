@@ -15,7 +15,7 @@ export default function App() {
   }, [])
   return (
     <main className=' bg-[#0d182e]'>
-      <Hero />
+      {/* <Hero /> */}
       <Skills />
       {/* <Experience /> */}
       <Projects />
