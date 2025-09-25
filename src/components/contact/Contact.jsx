@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <section id='contact'>
+    <section id='contact' data-aos='fade-up' data-aos-delay='400'>
         <div className='py-8 lg:py-16 max-w-3xl mx-auto px-4'>
             <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-white'>Contact Me</h2>
             <form action="#" className='space-y-8'>
