@@ -61,7 +61,7 @@ export default function About() {
                   <div>
                     <h3 className="text-2xl font-bold">Bachelor’s Degree</h3>
                     <p className="text-yellow-300 font-semibold mt-1">
-                      KMUTNB — Computer & Information Technology (CIT/ECT)
+                      KMUTNB
                     </p>
                   </div>
                   <span className="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10 whitespace-nowrap">
@@ -69,13 +69,15 @@ export default function About() {
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3">
-                  โฟกัส Full-Stack Web, UI/UX, Database และการประยุกต์ใช้ AI กับโปรเจกต์จริง
+                  คณะวิทยาลัยเทคโนโลยีอุตสาหกรรม
+                  สาขาวิชาเทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์แขนงคอมพิวเตอร์
+                  หลักสูตรปริญญาตรี 4 ปี
                 </p>
 
                 <div className="mt-6 grid sm:grid-cols-2 gap-3">
                   <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
                     <div className="text-xl font-extrabold">GPA</div>
-                    <div className="text-sm text-gray-300">อัปเดตล่าสุด: 3.XX</div>
+                    <div className="text-sm text-gray-300">อัปเดตล่าสุด: 2.67</div>
                   </div>
                   <a href="#projects" className="rounded-xl bg-orange-500 hover:bg-orange-600 transition hover:shadow-[0_0_40px_rgba(255,165,0,0.7)] p-4 text-center font-semibold">
                     ดูผลงาน
@@ -93,7 +95,8 @@ export default function About() {
                     </span>
                   </div>
                   <p className="text-yellow-300 font-semibold mt-1">โรงเรียนเตรียมวิศวกรรมศาสตร์ ไทย-เยอรมัน</p>
-                  <p className="text-gray-300 mt-2">สายวิศวกรรมไฟฟ้าและอิเล็กทรอนิกส์</p>
+                  <p className="text-gray-300 mt-2">วุฒิ:ปวช</p>
+                  <p className="text-gray-300 mt-2">สาขาไฟฟ้า/อิเล็กทรอนิกส์</p>
                 </div>
 
                 <div className="rounded-2xl border border-orange-400/40 bg-gradient-to-br from-white/5 to-white/0 p-6">
