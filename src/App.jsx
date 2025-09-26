@@ -5,6 +5,7 @@ import Hero from './components/hero/Hero'
 import Skills from './components/skills/Skills'
 import Projects from './components/projects/Projects'
 import Contact from './components/contact/Contact'
+import About from './components/about/About'
 
 export default function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function App() {
 
       {/* sections */}
       <Hero />
+      <About /> 
       <Skills />
       <Projects />
       <Contact />
