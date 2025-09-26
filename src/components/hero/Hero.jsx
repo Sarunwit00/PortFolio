@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar'
-import CV from './CV.png'
 import img from '../../assets/img.png'
 
 export default function Hero() {
@@ -19,25 +18,8 @@ export default function Hero() {
           </h1>
 
           <p className="mb-8 max-w-xl text-white/80">
-            I craft responsive, performant web apps with clean code and delightful interactions. Scroll to see my skills and featured projects.
+            นักศึกษาด้านเทคโนโลยีสารสนเทศที่มุ่งมั่นพัฒนาทักษะด้านการเขียนโปรแกรมและการออกแบบระบบ เพื่อสร้างสรรค์ผลงานที่มีคุณภาพและตอบโจทย์การใช้งานจริง
           </p>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href={CV}
-              download
-              className="rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-white shadow-[0_0_40px_rgba(255,165,0,0.5)] transition hover:bg-orange-600"
-            >
-              Download CV
-            </a>
-
-            <a
-              href="#projects"
-              className="rounded-full border border-white/15 px-6 py-3 text-sm text-white/90 hover:border-yellow-300 hover:text-yellow-300"
-            >
-              View Projects
-            </a>
-          </div>
         </div>
 
         <div data-aos="fade-left" className="order-1 md:order-2 relative flex items-center justify-center">
