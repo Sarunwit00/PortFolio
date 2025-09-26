@@ -1,45 +1,10 @@
 import React from "react";
 import Transcript from "../../assets/Transcript.pdf";
 
-/* ดีไซน์หลัก:
-   - Header บาร์ไล่สี + เบลอ เงาไฟส้ม
-   - การ์ดการศึกษาแบบ glass (bg-white/5 + border-white/10)
-   - Timeline เรืองแสงโทนส้ม
-   - ปุ่ม Transcript เด่น (ไอคอน + glow)
-*/
 
 export default function About() {
-  const badges = [
-    "Data Structures","Database Systems","Computer Networks",
-    "Web Programming","Software Engineering","AI Fundamentals"
-  ];
-
   const certs = [
-    "React Developer (Online)","Database Design Workshop","Networking Fundamentals",
-    "AI/ML Bootcamp (Intro)","Git & GitHub Essentials","UI/UX Design Sprint",
-  ];
-
-  const timeline = [
-    {
-      title: "โครงงานบูรณาการ (Full-Stack/AI)",
-      time: "2024 – ปัจจุบัน",
-      desc: "พัฒนาระบบจริง เชื่อมฐานข้อมูล/ฝั่งเซิร์ฟเวอร์ ผสานโมดูล AI เบื้องต้น",
-    },
-    {
-      title: "ฝึกงาน/สหกิจ (ถ้ามี)",
-      time: "2024",
-      desc: "เก็บชั่วโมงประสบการณ์ในอุตสาหกรรม (แก้ไขข้อความตามจริง)",
-    },
-    {
-      title: "ปรับพื้นฐานคณิต/โปรแกรมมิ่ง",
-      time: "2022 – 2023",
-      desc: "เสริมทักษะ DSA, SQL, Git/GitHub, พื้นฐาน DevOps",
-    },
-    {
-      title: "สายวิทย์-คณิต",
-      time: "2019 – 2022",
-      desc: "แข่งขันวิชาการ/กิจกรรม Coding Club/โครงงานวิทยาศาสตร์",
-    },
+    "โครงการ CDG",
   ];
 
   return (
@@ -100,16 +65,6 @@ export default function About() {
                   โฟกัสงานพัฒนาเว็บแบบ Full-Stack, การออกแบบ UI/UX และนำ AI มาประยุกต์ใช้กับงานจริง
                 </p>
 
-                {/* Badges วิชาเด่น */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {badges.map((b) => (
-                    <span key={b}
-                          className="px-3 py-1 rounded-full text-sm bg-white/10 border border-white/10">
-                      {b}
-                    </span>
-                  ))}
-                </div>
-
                 {/* Stats + CTA ดูโปรเจกต์ */}
                 <div className="mt-6 grid sm:grid-cols-4 gap-3">
                   <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
@@ -141,18 +96,10 @@ export default function About() {
                       2019 – 2022
                     </span>
                   </div>
-                  <p className="text-yellow-300 font-semibold mt-1">สายวิทย์-คณิต</p>
+                  <p className="text-yellow-300 font-semibold mt-1">โรงเรียนเตรียมวิศวกรรมศาสตร์ ไทย-เยอรมัน </p>
                   <p className="text-gray-300 mt-2">
-                    พื้นฐานคณิต/ฟิสิกส์แน่น สนใจ Coding & Robotics และการแข่งขันเชิงวิชาการ
+                    จบสาขาเตรียมวิศวกรรมไฟฟ้าและอิเล็กทรอนิกส์
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {["Math Olympiad (พื้นฐาน)","Physics Lab","Coding Club"].map((c) => (
-                      <span key={c}
-                            className="px-3 py-1 rounded-full text-sm bg-white/10 border border-white/10">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
                 {/* mini highlight card */}
@@ -169,29 +116,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* TIMELINE */}
-      <div className="container mx-auto px-5 mt-16">
-        <h3 className="text-2xl font-bold mb-6">เส้นเวลา (Timeline)</h3>
-        <div className="relative pl-7">
-          {/* เส้นกลางไล่สี + เรืองแสง */}
-          <div className="absolute left-2 top-0 bottom-0 w-1 rounded-full
-                          bg-gradient-to-b from-orange-400 to-yellow-400" />
-          {timeline.map((it, idx) => (
-            <div key={idx} className="relative mb-10">
-              {/* จุดเรืองแสง */}
-              <div className="absolute -left-1 top-2 w-4 h-4 rounded-full bg-orange-500
-                              ring-4 ring-[#0d182e] shadow-[0_0_20px_rgba(255,165,0,0.7)]" />
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-orange-400/60 transition">
-                <div className="flex items-baseline justify-between gap-4">
-                  <h4 className="text-xl font-semibold">{it.title}</h4>
-                  <span className="text-xs text-yellow-300 whitespace-nowrap">{it.time}</span>
-                </div>
-                <p className="text-gray-300 mt-1">{it.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* TIMELINE removed */}
 
       {/* CERTIFICATES */}
       <div className="container mx-auto px-5 mt-16">
@@ -201,7 +126,7 @@ export default function About() {
             <div key={name}
                  className="rounded-2xl bg-white/5 border border-white/10 p-4 hover:border-orange-400/50 transition">
               <p className="font-semibold">{name}</p>
-              <p className="text-xs text-gray-300 mt-1">ปีที่ได้รับ: 20XX</p>
+              <p className="text-xs text-gray-300 mt-1">ปีที่ได้รับ: 2025</p>
             </div>
           ))}
         </div>
