@@ -3,8 +3,8 @@ import Transcript from "../../assets/Transcript.pdf";
 
 
 export default function About() {
-  const certs = [
-    "โครงการ CDG",
+   const certs = [
+    { name: "โครงการ CDG", year: "2025" },
   ];
 
   return (
@@ -114,11 +114,11 @@ export default function About() {
       <div className="container mx-auto px-5 mt-16">
         <h3 className="text-2xl font-bold mb-4">Certificates & Achievements</h3>
         <div className="grid md:grid-cols-3 gap-4">
-          {certs.map((name) => (
-            <div key={name}
+          {certs.map((cert, index) => (
+            <div key={index}
                  className="rounded-2xl bg-white/5 border border-white/10 p-4 hover:border-orange-400/50 transition">
-              <p className="font-semibold">{name}</p>
-              <p className="text-xs text-gray-300 mt-1">ปีที่ได้รับ: 2025</p>
+              <p className="font-semibold">{cert.name}</p>
+              <p className="text-xs text-gray-300 mt-1">ปีที่ได้รับ: {cert.year}</p>
             </div>
           ))}
         </div>
