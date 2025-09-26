@@ -65,20 +65,14 @@ export default function About() {
                   โฟกัสงานพัฒนาเว็บแบบ Full-Stack, การออกแบบ UI/UX และนำ AI มาประยุกต์ใช้กับงานจริง
                 </p>
 
-                {/* Stats + CTA ดูโปรเจกต์ */}
-                <div className="mt-6 grid sm:grid-cols-4 gap-3">
+                {/* Stats simplified: เก็บเฉพาะข้อมูลสำคัญ (GPA) */}
+                <div className="mt-6 grid sm:grid-cols-2 gap-3">
                   <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
                     <div className="text-xl font-extrabold">GPA</div>
                     <div className="text-sm text-gray-300">อัปเดตล่าสุด: 3.XX</div>
                   </div>
-                  <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
-                    <div className="text-xl font-extrabold">Projects</div>
-                    <div className="text-sm text-gray-300">HealthPass, MeowJot</div>
-                  </div>
-                  <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
-                    <div className="text-xl font-extrabold">Focus</div>
-                    <div className="text-sm text-gray-300">React • Tailwind • MySQL</div>
-                  </div>
+
+                  {/* keep CTA ดูผลงาน (ถ้าต้องการลบด้วย บอกมาได้) */}
                   <a href="#projects"
                      className="rounded-xl bg-orange-500 hover:bg-orange-600 transition
                                 hover:shadow-[0_0_40px_rgba(255,165,0,0.7)] p-4 text-center font-semibold">
@@ -115,8 +109,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      {/* TIMELINE removed */}
 
       {/* CERTIFICATES */}
       <div className="container mx-auto px-5 mt-16">
