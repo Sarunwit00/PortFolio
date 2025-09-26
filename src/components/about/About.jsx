@@ -8,7 +8,7 @@ export default function About() {
     {
       name: "โครงการ CDG",
       year: "2025",
-      file: Transcript,     // ใส่ไฟล์ PDF จริงของใบนี้
+      file: CVV,     // ใส่ไฟล์ PDF จริงของใบนี้
       preview: CVV,         // รูปปก/พรีวิว (ถ้าไม่มีจะใช้ SVG แทน)
       desc: "โครงการพัฒนาทักษะการเขียนโปรแกรมและระบบงานจริง"
     },
