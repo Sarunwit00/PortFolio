@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export default function Navbar() {
   const links = [
     { name: 'Home', link: '#home' },
-    { name: "About", link: "#about" },
+    { name: 'About', link: '#about' },
     { name: 'Skills', link: '#skills' },
     { name: 'Projects', link: '#projects' },
     { name: 'Contact', link: '#contact' },
@@ -15,9 +15,23 @@ export default function Navbar() {
   useEffect(() => {
     const onHashChange = () => setActiveHash(window.location.hash || '#home')
 
+    const ids = ['home', 'about', 'skills', 'projects', 'contact']
+
     const onScroll = () => {
-      const ids = ['home', 'skills', 'projects', 'contact']
-      const y = window.scrollY + 120
+      const { scrollY, innerHeight } = window
+      const doc = document.documentElement
+      const scrollBottom = scrollY + innerHeight
+      const docHeight = Math.max(doc.scrollHeight, doc.offsetHeight)
+
+      // ✅ ถ้าเลื่อนถึงก้นหน้าจอ ให้ติด Contact ทันที
+      if (scrollBottom >= docHeight - 2) {
+        setActiveHash('#contact')
+        return
+      }
+
+      // ✅ ใช้กึ่งกลาง viewport เพื่อความแม่นยำกว่าเดิม
+      const y = scrollY + innerHeight / 2
+
       for (let i = ids.length - 1; i >= 0; i--) {
         const el = document.getElementById(ids[i])
         if (el && el.offsetTop <= y) {
@@ -41,7 +55,6 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-4">
-        {/* reduced vertical padding, smaller radius and tighter spacing for a less bulky navbar */}
         <div className="mt-2 rounded-xl border border-white/10 bg-[#0b152b]/70 backdrop-blur supports-[backdrop-filter]:bg-[#0b152b]/60">
           <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-3 lg:py-4">
             <a href="#home" className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
@@ -74,7 +87,6 @@ export default function Navbar() {
             </nav>
           </div>
 
-          {/* mobile menu (smaller spacing) */}
           {open && (
             <div className="md:hidden border-t border-white/10 px-3 py-2">
               {links.map((item) => (
