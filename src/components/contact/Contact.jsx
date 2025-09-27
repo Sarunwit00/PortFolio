@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
-import { FaLinkedinIn, FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaLinkedinIn, FaGithub, FaInstagram, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa'
 
 export default function Contact() {
   const contacts = [
@@ -16,20 +16,12 @@ export default function Contact() {
       href: 'tel:0990521476',
       icon: <FiPhone className="h-5 w-5 text-yellow-300" />,
     },
-    {
-      label: 'Location',
-      value: 'Vancouver, BC, Canada',
-      href: null,
-      icon: <FiMapPin className="h-5 w-5 text-yellow-300" />,
-    },
   ]
 
   const socials = [
-    { name: 'LinkedIn',  href: 'https://linkedin.com/',  icon: <FaLinkedinIn className="h-5 w-5" /> },
-    { name: 'Twitter',   href: 'https://twitter.com/',    icon: <FaTwitter className="h-5 w-5" /> },
-    { name: 'GitHub',    href: 'https://github.com/',     icon: <FaGithub className="h-5 w-5" /> },
-    { name: 'Instagram', href: 'https://instagram.com/',  icon: <FaInstagram className="h-5 w-5" /> },
-    { name: 'YouTube',   href: 'https://youtube.com/',    icon: <FaYoutube className="h-5 w-5" /> },
+    { name: 'GitHub',    href: 'https://github.com/Sarunwit00',     icon: <FaGithub className="h-5 w-5" /> },
+    { name: 'Facebook',  href: 'https://www.facebook.com/share/1CdFxNQJmJ/',   icon: <FaFacebook className="h-5 w-5" /> },
+    { name: 'Instagram', href: 'https://www.instagram.com/s_topppy/',  icon: <FaInstagram className="h-5 w-5" /> },
   ]
 
   return (

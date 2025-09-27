@@ -115,7 +115,6 @@ export default function About() {
       <div className="container mx-auto px-5 mt-16">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-2xl font-bold">Certificates & Achievements</h3>
-          <span className="text-xs text-gray-400">คลิก View เพื่อเปิดดู | Download เพื่อบันทึก</span>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
